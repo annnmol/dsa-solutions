@@ -9,11 +9,7 @@ var solution = function (s) {
 
   for (let i = 0; i < s.length; i++) {
     const ch = s[i];
-    if (map.has(ch)) {
-      map.set(ch, map.get(ch) + 1);
-    } else {
-      map.set(ch, 1);
-    }
+    map.set(ch, (map.get(ch) || 0) + 1);
   }
   console.log(map);
 

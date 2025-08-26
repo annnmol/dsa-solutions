@@ -3,19 +3,7 @@
  * @param {string[]} words
  * @return {string[]}
  */
-function revString(s) {
-  let arr = s.split("");
-  let left = 0;
-  let right = arr.length - 1;
-  while (left < right) {
-    const temp = arr[left];
-    arr[left] = arr[right];
-    arr[right] = temp;
-    left++;
-    right--;
-  }
-  return arr.join("");
-}
+
 var solution = function (words) {
   const firstRow = new Set("qwertyuiop".split(""));
   const secondRow = new Set("asdfghjkl".split(""));
@@ -55,6 +43,6 @@ var solution = function (words) {
 };
 
 // ✅ Example usage
-console.log(solution(["Hello","Alaska","Dad","Peace"])); // ["Alaska","Dad"]
+console.log(solution(["Hello", "Alaska", "Dad", "Peace"])); // ["Alaska","Dad"]
 console.log(solution(["oMk"])); //[]
-console.log(solution(["adsdf","sfd","Az"])) //["adsdf","sfd"]
+console.log(solution(["adsdf", "sfd", "Az"])); //["adsdf","sfd"]

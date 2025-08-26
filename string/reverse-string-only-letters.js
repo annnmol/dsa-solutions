@@ -4,31 +4,30 @@
  * @return {string}
  */
 function isCharacter(ch) {
-    let code = ch.charCodeAt(0);
-    // a-z 97-122 A-Z 65-90
-    return (code >= 65 && code <= 90) || (code >= 97 && code <= 122)
+  let code = ch.charCodeAt(0);
+  // a-z 97-122 A-Z 65-90
+  return (code >= 65 && code <= 90) || (code >= 97 && code <= 122);
 }
 var solution = function (s) {
-     let arr = s.split('');
-    let left = 0;
-    let right = s.length - 1;
-    while (left < right) {
-
-        while (left < right && !isCharacter(arr[left])) {
-            left++;
-        }
-        while (left < right && !isCharacter(arr[right])) {
-            right--;
-        }
-        if (left < right) {
-            let temp = arr[left];
-            arr[left] = arr[right];
-            arr[right] = temp;
-            left++;
-            right--
-        }
+  let arr = s.split("");
+  let left = 0;
+  let right = s.length - 1;
+  while (left < right) {
+    while (left < right && !isCharacter(arr[left])) {
+      left++;
     }
-    return arr.join('');
+    while (left < right && !isCharacter(arr[right])) {
+      right--;
+    }
+    if (left < right) {
+      let temp = arr[left];
+      arr[left] = arr[right];
+      arr[right] = temp;
+      left++;
+      right--;
+    }
+  }
+  return arr.join("");
 };
 
 // ✅ Example usage

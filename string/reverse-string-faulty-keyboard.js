@@ -42,6 +42,5 @@ var solution = function (s) {
 };
 
 // ✅ Example usage
-console.log(solution(["h", "e", "l", "l", "o"])); // ["o","l","l","e","h"]
-console.log(solution(["H", "a", "n", "n", "a", "h"])); //["h","a","n","n","a","H"]
-console.log(solution([])); // []
+console.log(solution("string")); // rtsng
+console.log(solution("poiinter")); //ponter

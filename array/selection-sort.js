@@ -1,23 +1,22 @@
 /**
- * @problem bubble-sort
+ * @problem selection-sort
  * @param {Array} s
  * @return {Array}
- * @description Compare the adjacent elements and swap them if they are in the wrong order in each iteration. After each iteration, the largest unsorted element is moved to its correct position.
+ * @description find the minimum element index in each iteration and swap it with the first unsorted element. After each iteration, the smallest unsorted element is moved to its correct position.
  * time complexity: O(n^2) bcz we have nested loops, each going up to n in the worst case
  * space complexity: O(1)
  */
 
 var solution = function (s) {
   let n = s.length;
-  for (let i = 0; i < n; i++) {
-    let isSwapped = false;
-    for (let j = 0; j < n - i - 1; j++) {
-      if (s[j] > s[j + 1]) {
-        [s[j], s[j + 1]] = [s[j + 1], s[j]];
-        isSwapped = true;
+  for (let i = 0; i < n - 1; i++) {
+    let minIndex = i;
+    for (let j = i + 1; j < n; j++) {
+      if (s[j] < s[minIndex]) {
+        minIndex = j;
       }
     }
-    if (!isSwapped) break;
+    [s[i], s[minIndex]] = [s[minIndex], s[i]];
   }
   return s;
 };

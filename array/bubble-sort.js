@@ -2,6 +2,7 @@
  * @problem bubble-sort
  * @param {Array} s
  * @return {Array}
+ * @description Compare the adjacent elements and swap them if they are in the wrong order in each iteration. After each iteration, the largest unsorted element is moved to its correct position.
  */
 
 var solution = function (s) {
